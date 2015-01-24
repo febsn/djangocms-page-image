@@ -1,0 +1,18 @@
+{% load static %}
+{% load thumbnail %}
+
+<ul class="page-preview">
+{% for page in subpages %}
+    <li class="child preview-item">
+        <a href="{{ page.attr.redirect_url|default:page.get_absolute_url }}">
+            {% if page.imageextension %}
+                <img src="{{ page.imageextension.image|thumbnail_url:'preview' }}" alt="{{ page.get_menu_title }}" />
+            {% else %}
+                <img src="{% static 'djangocms_page_image/img/default_preview.png' %}" alt="{{ page.get_menu_title }}" />
+            {% endif %}
+            {{ page.get_menu_title }}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+
