@@ -18,5 +18,5 @@ class ImageExtensionToolbar(ExtensionToolbar):
             page_extension, url = self.get_page_extension_admin()
             if url:
                 # adds a toolbar item
-                current_page_menu.add_modal_item(_('page image'), url=url,
+                current_page_menu.add_modal_item(_('page image and teaser'), url=url,
                     disabled=not self.toolbar.edit_mode)

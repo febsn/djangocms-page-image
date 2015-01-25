@@ -10,10 +10,11 @@ from cms.extensions import PageExtension
 from cms.extensions.extension_pool import extension_pool
 
 class ImageExtension(PageExtension):
-    image = FilerImageField(verbose_name=_('image'))
+    image = FilerImageField(verbose_name=_('image'), blank=True)
+    teaser = models.TextField(verbose_name=_('teaser'), blank=True)
     
     class Meta:
-        verbose_name=_('page image')
+        verbose_name=_('page image and teaser')
     
     def __unicode__(self):
         return self.image.label
