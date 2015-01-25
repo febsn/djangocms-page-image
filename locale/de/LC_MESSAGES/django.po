@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-24 08:46+0100\n"
+"POT-Creation-Date: 2015-01-25 21:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cms_toolbar.py:21 models.py:14
-msgid "page image"
-msgstr "Seiten-Symbolbild"
+#: cms_plugins.py:12
+msgid "Child Page Preview"
+msgstr "Unterseiten-Vorschau"
 
-#: models.py:11
+#: cms_toolbar.py:21 models.py:17
+msgid "page image and teaser"
+msgstr "Symbolbild und Teaser"
+
+#: models.py:13
 msgid "image"
 msgstr "Bild"
+
+#: models.py:14
+msgid "teaser"
+msgstr "Teaser"
