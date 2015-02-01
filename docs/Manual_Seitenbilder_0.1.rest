@@ -1,0 +1,21 @@
+======================================
+DjangoCMS Seiten-Symbolbild und Teaser
+======================================
+
+Mit dieser Erweiterung kann jeder DjangoCMS-Seite ein Symbolbild sowie ein kurzer Teaser-Text hinzugefügt werden.
+
+Hinzufügen von Symbolbild und/oder Teaser
+=========================================
+Ist man ins System eingeloggt und befindet sich auf der gewünschten Seite, so erreicht man die Einstellungen zu Bild und Teaser über den Menüpunkt "Seite" → "Symbolbild und Teaser".
+Dort kann der Seite ein Bild aus dem Dateisystem zugewiesen und/oder ein Teaser-Text eingetragen werden.
+
+Wo werden Symbolbild und Teaser angezeigt?
+==========================================
+Auf der Seite
+-------------
+Auf der Seite selbst werden Bild und Teaser standardmäßig nicht angezeigt, können jedoch auf Wunsch ins Template integriert werden. Auch verschiedene Versionen (Seite mit bzw. ohne Symbolbild / Teaser) sind möglich.
+
+Als Vorschau / Menü
+-------------------
+Mithilfe des Plugins "Unterseiten-Vorschau" ist es möglich, eine Verlinkung zu allen Unterseiten der aktuellen Seite inkl. Symbolbild und Teaser anzeigen zu lassen.
+
