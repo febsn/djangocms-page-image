@@ -10,7 +10,10 @@
             {% else %}
                 <img src="{% static 'djangocms_page_image/img/default_preview.png' %}" alt="{{ page.get_menu_title }}" />
             {% endif %}
-            {{ page.get_menu_title }}
+            <p class="title">{{ page.get_menu_title }}</p>
+            {% if page.imageextension.teaser %}
+            <p class="teaser">{{ page.imageextension.teaser }}</p>
+            {% endif %}
         </a>
     </li>
 {% endfor %}
