@@ -15,9 +15,9 @@ class CMSChildPagePreviewPlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         request = context['request']
         if request.user.has_perm('cms.can_change'):
-            context['subpages'] = request.current_page.children.all()
+            context['subpages'] = instance.placeholder.page.children.all()
         else:
-            context['subpages'] = request.current_page.children.published()
+            context['subpages'] = instance.placeholder.page.children.published()
         return context
 
 plugin_pool.register_plugin(CMSChildPagePreviewPlugin)
