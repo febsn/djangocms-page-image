@@ -1,6 +1,7 @@
 {% load static %}
 {% load thumbnail %}
 
+{% spaceless %}
 <ul class="page-preview">
 {% for page in subpages %}
     <li class="child preview-item">
@@ -18,4 +19,4 @@
     </li>
 {% endfor %}
 </ul>
-
+{% endspaceless %}
