@@ -12,6 +12,9 @@ class CMSChildPagePreviewPlugin(CMSPluginBase):
     name = _("Child Page Preview")
     render_template = "djangocms_page_image/plugins/child_page_preview.html"
     
+    #Search
+    search_fields = []
+    
     def render(self, context, instance, placeholder):
         request = context['request']
         if request.user.has_perm('cms.can_change'):
