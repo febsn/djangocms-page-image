@@ -12,6 +12,13 @@ from cms.extensions.extension_pool import extension_pool
 
 class ImageExtension(PageExtension):
     image = FilerImageField(verbose_name=_('image'), blank=True, null=True)
+    preview_image = FilerImageField(
+        verbose_name=_('preview image'),
+        blank=True,
+        null=True,
+        help_text=_('leave blank to use page image'),
+        related_name='preview_image_extensions'
+    )
     teaser = models.TextField(verbose_name=_('teaser'), blank=True)
     show_preview = models.BooleanField(
         verbose_name=_('show preview?'),
@@ -20,6 +27,9 @@ class ImageExtension(PageExtension):
     
     class Meta:
         verbose_name=_('page image and teaser')
+    
+    def get_preview_image(self):
+        return self.preview_image or self.image
 
 
 extension_pool.register(ImageExtension)

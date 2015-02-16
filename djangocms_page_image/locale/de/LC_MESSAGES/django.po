@@ -1,14 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# djangocms_page_image German translation
+# Copyright (C) 2015 Fabian Lehner
+# This file is distributed under the same license as the djangocms_page_image package.
+# Fabian Lehner <fl@makonis.net>, 2015.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-25 21:25+0100\n"
+"POT-Creation-Date: 2015-02-16 09:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,18 +18,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cms_plugins.py:12
+#: cms_plugins.py:14
 msgid "Child Page Preview"
 msgstr "Unterseiten-Vorschau"
 
-#: cms_toolbar.py:21 models.py:17
+#: cms_toolbar.py:21 models.py:29
 msgid "page image and teaser"
 msgstr "Symbolbild und Teaser"
 
-#: models.py:13
+#: models.py:14
 msgid "image"
 msgstr "Bild"
 
-#: models.py:14
+#: models.py:16
+msgid "preview image"
+msgstr "Vorschau-Bild"
+
+#: models.py:19
+msgid "leave blank to use page image"
+msgstr "freilassen, um das Seitenbild zu verwenden"
+
+#: models.py:22
 msgid "teaser"
 msgstr "Teaser"
+
+#: models.py:24
+msgid "show preview?"
+msgstr "In der Unterseiten-Vorschau anzeigen?"
+
+#: models.py:50
+msgid "style"
+msgstr "Layout"
