@@ -6,7 +6,6 @@ from filer.fields.image import FilerImageField
 from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin
-
 from cms.extensions import PageExtension
 from cms.extensions.extension_pool import extension_pool
 
@@ -24,10 +23,12 @@ class ImageExtension(PageExtension):
         verbose_name=_('show preview?'),
         default=True
     )
-    
+    extra_classes = models.CharField(verbose_name=_('extra classes'),
+        max_length=512, blank=True)
+
     class Meta:
-        verbose_name=_('page image and teaser')
-    
+        verbose_name=_('Page Image and Teaser')
+
     def get_preview_image(self):
         return self.preview_image or self.image
 
@@ -53,4 +54,3 @@ class ChildPagePreviewPlugin(CMSPlugin):
         max_length=50,
         blank=True
     )
-    

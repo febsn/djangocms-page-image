@@ -12,13 +12,13 @@ from .models import ChildPagePreviewPlugin
 class CMSChildPagePreviewPlugin(CMSPluginBase):
     model = ChildPagePreviewPlugin
     name = _("Child Page Preview")
-    
+
     TEMPLATE_NAME = "djangocms_page_image/plugins/%s.html"
     render_template = TEMPLATE_NAME % 'child_page_preview'
-    
+
     #Search
     search_fields = []
-    
+
     def render(self, context, instance, placeholder):
         self.render_template = select_template((
             self.TEMPLATE_NAME % instance.style,
@@ -37,4 +37,3 @@ class CMSChildPagePreviewPlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(CMSChildPagePreviewPlugin)
-

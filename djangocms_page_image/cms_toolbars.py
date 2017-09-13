@@ -8,7 +8,7 @@ from .models import ImageExtension
 @toolbar_pool.register
 class ImageExtensionToolbar(ExtensionToolbar):
     model = ImageExtension
-    
+
     def populate(self):
         # setup the extension toolbar with permissions and sanity checks
         current_page_menu = self._setup_extension_toolbar()
@@ -18,5 +18,5 @@ class ImageExtensionToolbar(ExtensionToolbar):
             page_extension, url = self.get_page_extension_admin()
             if url:
                 # adds a toolbar item
-                current_page_menu.add_modal_item(_('page image and teaser'), url=url,
+                current_page_menu.add_modal_item(_('Page Image and Teaser'), url=url,
                     disabled=not self.toolbar.edit_mode)
