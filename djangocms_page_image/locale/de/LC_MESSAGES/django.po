@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-16 09:19+0100\n"
+"POT-Creation-Date: 2017-09-13 17:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,30 +22,34 @@ msgstr ""
 msgid "Child Page Preview"
 msgstr "Unterseiten-Vorschau"
 
-#: cms_toolbar.py:21 models.py:29
-msgid "page image and teaser"
+#: cms_toolbars.py:21 models.py:30
+msgid "Page Image and Teaser"
 msgstr "Symbolbild und Teaser"
 
-#: models.py:14
+#: models.py:13
 msgid "image"
 msgstr "Bild"
 
-#: models.py:16
+#: models.py:15
 msgid "preview image"
 msgstr "Vorschau-Bild"
 
-#: models.py:19
+#: models.py:18
 msgid "leave blank to use page image"
 msgstr "freilassen, um das Seitenbild zu verwenden"
 
-#: models.py:22
+#: models.py:21
 msgid "teaser"
 msgstr "Teaser"
 
-#: models.py:24
+#: models.py:23
 msgid "show preview?"
 msgstr "In der Unterseiten-Vorschau anzeigen?"
 
-#: models.py:50
+#: models.py:26
+msgid "extra classes"
+msgstr ""
+
+#: models.py:51
 msgid "style"
 msgstr "Layout"
