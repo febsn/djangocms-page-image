@@ -27,6 +27,7 @@ class PageImagePluginBase(CMSPluginBase):
         # support for legacy templates
         context['subpages'] = context['pages']
         context['instance'] = instance
+        context['current_page'] = context['request'].current_page
         return context
 
 
@@ -41,7 +42,7 @@ class CMSChildPagePreviewPlugin(PageImagePluginBase):
     search_fields = []
 
     def get_pages(self, context, instance, placeholder):
-        return instance.placeholder.page.children.all()
+        return context['request'].current_page.children.all()
 plugin_pool.register_plugin(CMSChildPagePreviewPlugin)
 
 
@@ -53,5 +54,5 @@ class CMSSiblingPagePreviewPlugin(PageImagePluginBase):
     render_template = TEMPLATE_NAME % 'sibling_page_preview'
 
     def get_pages(self, context, instance, placeholder):
-        return instance.placeholder.page.get_filtered_siblings()
+        return context['request'].current_page.get_filtered_siblings()
 plugin_pool.register_plugin(CMSSiblingPagePreviewPlugin)
