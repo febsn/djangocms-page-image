@@ -3,7 +3,7 @@
 
 {% spaceless %}
 <ul class="page-preview{% if instance.style %} {{ instance.style }}{% endif %}">
-{% for page in subpages %}
+{% for page in pages %}
     <li class="child preview-item {{ page.imageextension.extra_classes }}">
         <a href="{{ page.attr.redirect_url|default:page.get_absolute_url }}">
             {% if page.imageextension.get_preview_image %}

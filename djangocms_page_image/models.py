@@ -31,8 +31,6 @@ class ImageExtension(PageExtension):
 
     def get_preview_image(self):
         return self.preview_image or self.image
-
-
 extension_pool.register(ImageExtension)
 
 
@@ -45,6 +43,25 @@ class ChildPagePreviewPlugin(CMSPlugin):
     DEFAULT_STYLE = getattr(
         settings,
         'DJANGOCMS_PAGE_IMAGE_CPP_DEFAULT_STYLE',
+        ''
+    )
+    style = models.CharField(
+        _('style'),
+        choices=STYLE_CHOICES,
+        default=DEFAULT_STYLE,
+        max_length=50,
+        blank=True
+    )
+
+class SiblingPagePreviewPlugin(CMSPlugin):
+    STYLE_CHOICES = getattr(
+        settings,
+        'DJANGOCMS_PAGE_IMAGE_SPP_STYLE_CHOICES',
+        []
+    )
+    DEFAULT_STYLE = getattr(
+        settings,
+        'DJANGOCMS_PAGE_IMAGE_SPP_DEFAULT_STYLE',
         ''
     )
     style = models.CharField(
