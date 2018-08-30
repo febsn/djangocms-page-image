@@ -42,7 +42,7 @@ class CMSChildPagePreviewPlugin(PageImagePluginBase):
     search_fields = []
 
     def get_pages(self, context, instance, placeholder):
-        return context['request'].current_page.children.all()
+        return context['request'].current_page.get_child_pages()
 plugin_pool.register_plugin(CMSChildPagePreviewPlugin)
 
 
@@ -54,5 +54,5 @@ class CMSSiblingPagePreviewPlugin(PageImagePluginBase):
     render_template = TEMPLATE_NAME % 'sibling_page_preview'
 
     def get_pages(self, context, instance, placeholder):
-        return context['request'].current_page.get_filtered_siblings()
+        return context['request'].current_page.parent_page.get_child_pages()
 plugin_pool.register_plugin(CMSSiblingPagePreviewPlugin)
