@@ -1,5 +1,6 @@
 from django.db.models import Q
 from django.template.loader import select_template
+from django.utils import translation
 
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
@@ -18,12 +19,13 @@ class PageImagePluginBase(CMSPluginBase):
         request = context['request']
         pages = self.get_pages(context, instance, placeholder)
 
-        if not request.user.has_perm('cms.can_change'):
-            pages = pages.published()
-        context['pages'] = pages.filter(
+        pages = pages.published(site=context['request'].site, language=translation.get_language())
+        pages = pages.filter(
             Q(imageextension__show_preview=True) |
             Q(imageextension__isnull=True)
         )
+
+        context['pages'] = pages
         # support for legacy templates
         context['subpages'] = context['pages']
         context['instance'] = instance
