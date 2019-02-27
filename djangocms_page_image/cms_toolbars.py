@@ -19,4 +19,4 @@ class ImageExtensionToolbar(ExtensionToolbar):
             if url:
                 # adds a toolbar item
                 current_page_menu.add_modal_item(_('Page Image and Teaser'), url=url,
-                    disabled=not self.toolbar.edit_mode)
+                    disabled=not self.toolbar.edit_mode_active)
