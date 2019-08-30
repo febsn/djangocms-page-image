@@ -10,9 +10,15 @@ from cms.extensions import PageExtension
 from cms.extensions.extension_pool import extension_pool
 
 class ImageExtension(PageExtension):
-    image = FilerImageField(verbose_name=_('image'), blank=True, null=True)
+    image = FilerImageField(
+        verbose_name=_('image'),
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+    )
     preview_image = FilerImageField(
         verbose_name=_('preview image'),
+        on_delete=models.SET_NULL,
         blank=True,
         null=True,
         help_text=_('leave blank to use page image'),
