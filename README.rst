@@ -18,6 +18,10 @@ Dependencies
 Changelog
 =========
 
+0.7.1
+-----
+Fixed a data migration issue.
+
 0.7.0
 -----
 Version 0.7.0 introduces a new title extension, called Teaser, and a migration which creates a

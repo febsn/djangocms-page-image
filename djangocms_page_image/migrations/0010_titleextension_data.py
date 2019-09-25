@@ -8,13 +8,13 @@ logger = logging.getLogger(__file__)
 
 
 def create_title_extensions(apps, schema_editor):
-    # ImageExtension = apps.get_model('djangocms_page_image', 'ImageExtension')
-    # TeaserExtension = apps.get_model('djangocms_page_image', 'TeaserExtension')
-    # Title = apps.get_model('cms', 'Title')
+    ImageExtension = apps.get_model('djangocms_page_image', 'ImageExtension')
+    TeaserExtension = apps.get_model('djangocms_page_image', 'TeaserExtension')
+    Title = apps.get_model('cms', 'Title')
 
-    # We don't use historic models at this point because we need special model methods
-    from ..models import ImageExtension, TeaserExtension
-    from cms.models import Title
+    # We're gonna use this for the copy_to_public method
+    from ..models import TeaserExtension as CurrentTeaserExtension
+    from cms.models import Title as CurrentTitle
 
     # The page extensions we're migrating naturally don't have a language assigned, thus we assume the
     # project's default language
@@ -40,8 +40,11 @@ def create_title_extensions(apps, schema_editor):
             extra_classes=image_extension.extra_classes
         )
         teaser_extension.save()
-        teaser_extension.copy_to_public(
-            title_obj.publisher_public,
+
+        current_teaser_extension = CurrentTeaserExtension.objects.get(pk=teaser_extension.pk)
+        current_title_obj = CurrentTitle.objects.get(pk=title_obj.pk)
+        current_teaser_extension.copy_to_public(
+            current_title_obj.publisher_public,
             lang
         )
         logger.info('Teaser extension for title "{}" successfully created.'.format(title_obj))
