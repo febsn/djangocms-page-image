@@ -24,10 +24,7 @@ setup(
     install_requires=[
         "Django >= 1.11",
         "django-filer >= 1.2.0",
-
         "django-cms >= 3.5",
-        "django-sekizai >= 0.4.2",
-        "easy_thumbnails >= 1.0",
     ],
     include_package_data=True,
     zip_safe=False,
