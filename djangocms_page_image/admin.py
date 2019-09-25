@@ -1,8 +1,13 @@
 from django.contrib import admin
-from cms.extensions import PageExtensionAdmin
+from cms.extensions import PageExtensionAdmin, TitleExtensionAdmin
 
-from .models import ImageExtension
+from . import models
 
 class ImageExtensionAdmin(PageExtensionAdmin):
     pass
-admin.site.register(ImageExtension, ImageExtensionAdmin)
+admin.site.register(models.ImageExtension, ImageExtensionAdmin)
+
+
+class TeaserExtensionAdmin(TitleExtensionAdmin):
+    pass
+admin.site.register(models.TeaserExtension, TeaserExtensionAdmin)
