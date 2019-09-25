@@ -7,10 +7,10 @@ setup(
     version=__version__,
     url='http://github.com/febsn/djangocms-page-image',
     license='MIT',
-    description="django-cms page extension providing image and teaser text",
+    description="django-cms page and title extensions providing image and teaser text",
     long_description=open('README.rst').read(),
     author='Fabian Lehner',
-    author_email='fl@makonis.net',
+    author_email='fabian.lehner@marmara.at',
     packages=find_packages(),
     classifiers=[
         'Development Status :: 3 - Alpha',
