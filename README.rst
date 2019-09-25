@@ -2,7 +2,10 @@
 djangocms-page-image
 ====================
 
-A DjangoCMS page extension providing a featured image and a teaser text.
+This package provides two DjangoCMS extensions:
+* "Page Image" is a page extension that allows you to add an image to a DjangoCMS page.
+* "Teaser" is a title extension that allows you to add an image and a teaser text to each
+    localization of a DjangoCMS page.
 
 Dependencies
 ============
