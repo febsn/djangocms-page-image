@@ -147,3 +147,7 @@ class ChildPageTeasersPlugin(CMSPlugin):
         null=True,
         help_text=_("If left blank, the current page's children will be shown."),
     )
+
+    def copy_relations(self, oldinstance):
+        self.parent_page = oldinstance.parent_page.get_public_object()
+        self.save()
