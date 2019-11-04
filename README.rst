@@ -18,6 +18,10 @@ Dependencies
 Changelog
 =========
 
+0.7.2
+-----
+Added copy_relations method.
+
 0.7.1
 -----
 Fixed a data migration issue.
