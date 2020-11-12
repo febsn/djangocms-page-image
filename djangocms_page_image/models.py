@@ -149,5 +149,6 @@ class ChildPageTeasersPlugin(CMSPlugin):
     )
 
     def copy_relations(self, oldinstance):
-        self.parent_page = oldinstance.parent_page.get_public_object()
+        if oldinstance and oldinstance.parent_page:
+            self.parent_page = oldinstance.parent_page.get_public_object()
         self.save()
